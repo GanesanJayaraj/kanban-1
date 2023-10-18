@@ -2,6 +2,13 @@ console.log("Welcome to Kanban");
 
 const themeChangeBtn = document.getElementById("themeChangeBtn");
 const addNewTask = document.getElementById("addNewTask");
+const closeIcon = document.getElementById("closeIcon");
+
+const modalName = document.getElementById("name");
+const modalTxtarea = document.getElementById("txtarea");
+const modalTasktype = document.getElementById("tasktype");
+
+const saveTask = document.getElementById("saveTask");
 
 const body = document.querySelector("body");
 const aside = document.querySelector("aside");
@@ -30,4 +37,30 @@ addNewTask.addEventListener("click", (e)=>{
     aside.classList.add("blur");
     main.classList.add("blur");
     modal.style.display = "flex";
+});
+closeIcon.addEventListener("click" , ()=>{
+    aside.classList.remove("blur");
+    main.classList.remove("blur");
+    modal.style.display = "none";
+});
+let getLocalStoreTasks = localStorage.getItem("allTasks");
+let allListTasks = [];
+if(!getLocalStoreTasks) {
+    localStorage.setItem("allTasks" , JSON.stringify([]));
+} else {
+    allListTasks = JSON.parse(localStorage.getItem("allTasks")) || [];
+}
+saveTask.addEventListener("click" , (e) => {
+    let getModalName = modalName.value;
+    let getModalTxtarea = modalTxtarea.value;
+    let getModalTasktype = modalTasktype.value;
+
+    let obj = {
+        taskName : getModalName, 
+        taskTxtarea : getModalTxtarea, 
+        tasktype : getModalTasktype 
+    }
+    allListTasks.push(obj)
+    localStorage.setItem("allTasks" , JSON.stringify(allListTasks))
+    console.log(allListTasks)
 });
