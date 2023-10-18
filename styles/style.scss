@@ -221,6 +221,12 @@ body {
                 }
 
             }
+            .close {
+                &:hover {
+                    cursor: pointer;
+                    background-color: #f4f9ff;
+                }
+            }
         }
         .inputMod {
             height: 2rem;

@@ -191,6 +191,10 @@ body.dark {
   border: none;
   outline: none;
 }
+.modal .mod-container .nameTask .close:hover {
+  cursor: pointer;
+  background-color: #f4f9ff;
+}
 .modal .mod-container .inputMod {
   height: 2rem;
   border-radius: 0.4rem;
