@@ -1,0 +1,271 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  color: rgb(22, 8, 41);
+  background-color: white;
+}
+body aside {
+  flex: 25%;
+  height: 100%;
+  padding: 1rem 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f4f9ff;
+  border-right: 1px solid white;
+}
+body aside .top {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+body aside .top .logo {
+  padding: 0 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  height: 10vh;
+}
+body aside .top .logo .spans {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 3px;
+}
+body aside .top .logo .spans span {
+  width: 4px;
+  height: 18px;
+  border-radius: 2px;
+  background-color: rgb(55, 127, 221);
+}
+body aside .top .logo .spans .s2 {
+  background-color: rgb(80, 145, 230);
+}
+body aside .top .logo .spans .s3 {
+  background-color: rgb(126, 182, 255);
+}
+body aside .top p {
+  margin: 1rem;
+  font-size: 12px;
+  opacity: 0.8;
+}
+body aside .top ul {
+  font-size: 14px;
+  margin: 0.4rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  width: 100%;
+}
+body aside .top ul li {
+  width: 90%;
+  border-radius: 0 100px 100px 0;
+  display: flex;
+  align-items: center;
+  padding: 0.6rem;
+  color: rgb(22, 8, 41);
+}
+body aside .top ul li.active {
+  box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+  background-color: rgb(246, 252, 255);
+  color: rgb(22, 8, 41);
+}
+body aside .top ul li:hover {
+  cursor: pointer;
+}
+body main {
+  flex: 75%;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+body main header {
+  background-color: #f4f9ff;
+  padding: 2rem 1rem;
+  height: 12vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid white;
+}
+body main section {
+  height: 100%;
+  background-color: #fafcff;
+}
+body button {
+  height: 2rem;
+  width: 100%;
+  max-width: 10rem;
+  min-width: 4rem;
+  background-color: rgb(22, 8, 41);
+  outline: none;
+  border: none;
+  border-radius: 0.4rem;
+  color: white;
+}
+body button:hover {
+  cursor: pointer;
+}
+body.light {
+  background-color: #f4f9ff;
+}
+body.dark {
+  background-color: #15151d;
+}
+
+.modal {
+  display: none;
+  z-index: 999;
+  background-color: transparent;
+  filter: blur(0px);
+  -webkit-filter: blur(0px);
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+}
+.modal .mod-container {
+  display: flex;
+  padding: 2rem;
+  gap: 1rem;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-evenly;
+  height: 70%;
+  width: 50%;
+  box-shadow: 0px 0px 50px 0px rgba(0, 0, 0, 0.1);
+}
+.modal .mod-container .nameTask {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.modal .mod-container .nameTask #name {
+  align-items: center;
+  display: flex;
+  padding-left: 4px;
+  flex: 1;
+}
+.modal .mod-container .nameTask p {
+  align-items: center;
+  display: flex;
+  flex: 1;
+}
+.modal .mod-container .nameTask .daily-goal {
+  align-items: center;
+  display: flex;
+  flex: 1;
+}
+.modal .mod-container .nameTask select {
+  align-items: center;
+  display: flex;
+  flex: 1;
+  width: 100%;
+  border: none;
+  outline: none;
+}
+.modal .mod-container .nameTask select option {
+  align-items: center;
+  display: flex;
+  flex: 1;
+  height: 1rem;
+  width: 100%;
+  border: none;
+  outline: none;
+}
+.modal .mod-container .inputMod {
+  height: 2rem;
+  border-radius: 0.4rem;
+  border: none;
+  outline: none;
+  width: 100%;
+}
+.modal .mod-container .inputMod.time {
+  width: 2rem;
+}
+.modal .mod-container .daily-goal {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  gap: 2rem;
+}
+.modal .mod-container .daily-goal div {
+  display: flex;
+  flex-direction: row;
+  gap: 0.4rem;
+  align-items: center;
+  justify-content: space-around;
+}
+.modal .mod-container .daily-goal input {
+  width: 2rem;
+  height: 2rem;
+  min-width: 2rem;
+}
+.modal .mod-container .daily-goal input.time {
+  width: 2rem;
+}
+.modal .mod-container .daily-goal input[placeholder] {
+  align-items: center;
+  text-align: center;
+}
+.modal .mod-container .daily-goal input::-webkit-outer-spin-button,
+.modal .mod-container .daily-goal input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.modal .mod-container .daily-goal input[type=number] {
+  -moz-appearance: textfield;
+}
+.modal .mod-container .daily-goal.cust {
+  align-items: center;
+  justify-content: center;
+}
+
+textarea {
+  width: 100%;
+  height: 100%;
+  resize: none;
+  outline: none;
+  border: none;
+  border-radius: 0.4rem;
+  padding: 1rem;
+}
+
+select {
+  outline: none;
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.blur {
+  background-color: transparent;
+  filter: blur(40px);
+  -webkit-filter: blur(40px);
+}/*# sourceMappingURL=style.css.map */
