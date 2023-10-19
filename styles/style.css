@@ -256,6 +256,10 @@ textarea {
 
 select {
   outline: none;
+  outline: none;
+  border: none;
+  width: 100%;
+  flex: 1;
 }
 
 .flex-row {
